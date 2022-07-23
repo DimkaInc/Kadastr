@@ -32,6 +32,7 @@ soup = BeautifulSoup(html_text, 'html.parser')
 base_url = "https://cloud-api.yandex.net/v1/disk/public/resources/download?"
 
 out_file_name = "kadastr.csv"
+csv_out_file = open(out_file_name, "a+")
 
 def download(url, file_name):
     print("%s %s скачиваю" % (url, file_name))
