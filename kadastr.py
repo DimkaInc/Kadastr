@@ -22,9 +22,9 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlencode
 
 # Работа в одном файле или через вызов дочернего процесса
-only_one = False
+only_one = True
 # Создание файла результата с нуля
-renew_file = False
+renew_file = True
 
 pg_url = "https://ckomo.ru/01.01.05.14/329"
 html_text = requests.get(pg_url).text
@@ -89,8 +89,8 @@ if __name__ == "__main__":
         if renew_file:
             csv_out_file = open(out_file_name, "w")
             csv_out_file.write("'Кадастровый номер','Файл с кадастровым номером'\n")
-            csv_out_file.close()
-            del(csv_out_file)
+            #csv_out_file.close()
+            #del(csv_out_file)
         for item in lists:
             if not os.path.exists(item[1]):
                 download(item[0], item[1])
@@ -108,7 +108,7 @@ if __name__ == "__main__":
                 else:
                     cmd = "%s '%s'" % (sys.argv[0],item[1])
                     res = os.system(cmd)
-                del(res)
+                    del(res)
             del(item)
         del(lists)
     else:
