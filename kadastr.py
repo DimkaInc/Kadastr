@@ -64,7 +64,6 @@ def ods_work(stream, file_name):
     ods_book = pe.get_book(file_type = "ods", file_content = stream)
     lines = len(ods_book[0])
     row = 0
-    cnt = ""
     for rows in ods_book[0]:
         row += 1
         print("Строка %d/%d" % (row, lines), end = "\r")
