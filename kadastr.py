@@ -89,8 +89,8 @@ if __name__ == "__main__":
         if renew_file:
             csv_out_file = open(out_file_name, "w")
             csv_out_file.write("'Кадастровый номер','Файл с кадастровым номером'\n")
-            #csv_out_file.close()
-            #del(csv_out_file)
+        else:
+            csv_out_file = open(out_file_name, "a+")
         for item in lists:
             if not os.path.exists(item[1]):
                 download(item[0], item[1])
