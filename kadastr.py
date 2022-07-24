@@ -22,9 +22,9 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlencode
 
 # Работа в одном файле или через вызов дочернего процесса
-only_one = True
+only_one = False
 # Создание файла результата с нуля
-renew_file = True
+renew_file = False
 
 pg_url = "https://ckomo.ru/01.01.05.14/329"
 html_text = requests.get(pg_url).text
